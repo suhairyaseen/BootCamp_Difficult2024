@@ -8,20 +8,20 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import com.BootCamp.part1.Difficult_Pages.AddToCartPage;
+import com.BootCamp.part1.Difficult_Pages.AddToCartPageQ31;
 import com.BootCamp.part1.Difficult_Pages.HomePage;
-import com.BootCamp.part1.Difficult_Pages.ProductPage;
+import com.BootCamp.part1.Difficult_Pages.ProductPageQ32;
 import com.BootCamp.part1.Difficult_TestBase.TestBase;
 
-public class ShopingCartTest extends TestBase {
+public class ShopingCartTestQ31 extends TestBase {
 
-	public ShopingCartTest() throws IOException {
+	public ShopingCartTestQ31() throws IOException {
 		super();
 	}
 public WebDriver driver;
 public HomePage homepage;
-public ProductPage productpage;
-public AddToCartPage addtocartpage;
+public ProductPageQ32 productpage;
+public AddToCartPageQ31 addtocartpage;
 
 @BeforeMethod
 	public void setupPage() {
@@ -32,10 +32,10 @@ public AddToCartPage addtocartpage;
 		homepage = new HomePage(driver);
 		homepage.enterInSearchTextField(prop.getProperty("product"));
 		homepage.clickOnSearchButton();
-		productpage = new ProductPage(driver);
+		productpage = new ProductPageQ32(driver);
 		productpage.clickOnAddToCartButton();
 		productpage.clickOnConfirmAddTocartButton();
-		addtocartpage= new AddToCartPage(driver);
+		addtocartpage= new AddToCartPageQ31(driver);
 		Assert.assertTrue(addtocartpage.retriveSuccessfulMessage().contains(prop.getProperty("messageSuccess")));
 	}
 @AfterMethod

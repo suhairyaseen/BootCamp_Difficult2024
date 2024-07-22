@@ -3,13 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.BootCamp.part1.Difficult_TestCases.ShopingCartTest">
+      <class name="com.BootCamp.part1.Difficult_TestCases.CheckoutTest">
         <methods>
-          <include name="tearDown"/>
-          <include name="validateProductInShoppingCart"/>
-          <include name="setupPage"/>
+          <include name="setup"/>
+          <include name="validateCorrectProductPurchased"/>
         </methods>
-      </class> <!-- com.BootCamp.part1.Difficult_TestCases.ShopingCartTest -->
+      </class> <!-- com.BootCamp.part1.Difficult_TestCases.CheckoutTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

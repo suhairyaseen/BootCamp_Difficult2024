@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class ProductPage {
+public class ProductPageQ32 {
 	public WebDriver driver;
 	
 @FindBy(xpath = "//a[text()='HP LP3065']")
@@ -16,8 +16,11 @@ public class ProductPage {
 	
    @FindBy(xpath = "//button[@id = 'button-cart']")
     private WebElement confirmAddToCartButton;
-
-public ProductPage(WebDriver driver) {
+ 
+   @FindBy(xpath = "//a[text() = 'Apple']")
+   private WebElement brandandLink;
+   
+public ProductPageQ32(WebDriver driver) {
 	this.driver = driver;
 	PageFactory.initElements(driver,this);
 }
@@ -33,5 +36,12 @@ public ProductPage(WebDriver driver) {
 	}
 	public void clickOnWebElementLink() {
 		webElementlink.click();
+	}
+	public boolean checkIfDisplayedConfirmBandLink() {
+		boolean brand = brandandLink.isDisplayed();
+		return brand;
+	}
+	public void clickOnbrandandLink() {
+		brandandLink.click();
 	}
 }

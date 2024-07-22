@@ -20,6 +20,18 @@ public class HomePage {
 	@FindBy(xpath = "//button[@class = 'btn btn-default btn-lg']")
 	private WebElement searchbutton;
 	
+	@FindBy(xpath = "//a[text() = 'Register']")
+     private WebElement registerDropdown;
+	
+	@FindBy(xpath = "//p[@class = 'price'][contains(text() , '$602.00 ')]/following::button[1]")
+	private WebElement addtocartProduct;
+	
+	@FindBy(linkText = "Shopping Cart")
+	private WebElement shoppingCart;
+	
+	@FindBy(xpath = "//a[text() ='Brands']")
+	private WebElement brandLinkElement;
+	
 	public HomePage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver,this);
@@ -28,15 +40,37 @@ public class HomePage {
 	public void clickOnAccountDropdown() {
 		AccountDropdown.click();
 	}
-	public LoginPage clickonSignInDropdown() {
+	public LoginPageQ30 clickonSignInDropdown() {
 		signInDrodown.click();
-		return new LoginPage(driver);
+		return new LoginPageQ30(driver);
 	}
 	public void enterInSearchTextField(String SearchBox) {
 		 searchTextField.sendKeys(SearchBox);
 	}
-	public ProductPage clickOnSearchButton() {
+	public ProductPageQ32 clickOnSearchButton() {
 		searchbutton.click();
-		return new ProductPage (driver);
+		return new ProductPageQ32 (driver);
 	}
+	public RegisterPageQ63 clickOnRegisterDropdown() {
+		registerDropdown.click();
+		return new RegisterPageQ63(driver);
+	}
+	public void clickonaddtocartProduct() {
+		addtocartProduct.click();
+		
+	}
+	public CheckoutPageQ64 clickOnShoppingCart() {
+		shoppingCart.click();
+		return new CheckoutPageQ64(driver);
+	}
+		public boolean varifyBrandLinkElement() {
+			boolean linkelement = brandLinkElement.isDisplayed();
+			return linkelement;
+		
+	}
+	public ProductPageQ32 clickOnBrandLinkElement() {
+		brandLinkElement.click();
+		return new  ProductPageQ32(driver);
+	}	
+	
 }

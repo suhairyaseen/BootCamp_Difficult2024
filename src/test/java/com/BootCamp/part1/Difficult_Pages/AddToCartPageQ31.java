@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class AddToCartPage {
+public class AddToCartPageQ31 {
 	public WebDriver driver;
 	
 
@@ -13,7 +13,7 @@ public class AddToCartPage {
 	@FindBy(xpath ="//div[@class = 'alert alert-success alert-dismissible']")
 	private WebElement successfullMessage;
 	
-	public  AddToCartPage(WebDriver driver) {
+	public  AddToCartPageQ31(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver,this);
 	}

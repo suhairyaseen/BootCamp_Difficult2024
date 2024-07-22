@@ -8,17 +8,17 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.BootCamp.part1.Difficult_Pages.HomePage;
-import com.BootCamp.part1.Difficult_Pages.ProductPage;
+import com.BootCamp.part1.Difficult_Pages.ProductPageQ32;
 import com.BootCamp.part1.Difficult_TestBase.TestBase;
 
-public class ProductTest extends TestBase {
-	public ProductTest() throws IOException {
+public class ProductTestQ32 extends TestBase {
+	public ProductTestQ32() throws IOException {
 		super();
 	}
 
 	public WebDriver driver;
 	public HomePage homepage;
-	public ProductPage productpage;
+	public ProductPageQ32 productpage;
 	
 	@BeforeMethod
 public void setUpBrowser() {
@@ -30,7 +30,7 @@ public void setUpBrowser() {
 		homepage = new HomePage(driver);
 		homepage.enterInSearchTextField(prop.getProperty("product"));
 		homepage.clickOnSearchButton();
-		productpage = new ProductPage(driver);
+		productpage = new ProductPageQ32(driver);
 		Assert.assertTrue(productpage.checkTheWebElementShowUp());
 		productpage.clickOnWebElementLink();
 	}

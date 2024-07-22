@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LoginPage {
+public class LoginPageQ30 {
 	
 	public WebDriver driver;
 	
@@ -19,7 +19,7 @@ public class LoginPage {
 	@FindBy(xpath = "//input[@class = 'btn btn-primary']")
 	private WebElement loginButton;
 	
-	public LoginPage (WebDriver driver) {
+	public LoginPageQ30 (WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver,this);
 	}
@@ -30,9 +30,9 @@ public class LoginPage {
 	public void enterPasswordTextField(String passwordtext) {
 		 passwordTextField.sendKeys(passwordtext);
 	}
-	public MyAccountPage clickOnLoginButton() {
+	public MyAccountPageQ30 clickOnLoginButton() {
 		loginButton.click();
-		return new MyAccountPage(driver);		
+		return new MyAccountPageQ30(driver);		
 	}
 	
 }
